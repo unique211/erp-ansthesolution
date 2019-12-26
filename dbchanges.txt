@@ -1,0 +1,9 @@
+ALTER TABLE `branch_mastre` ADD `bankname` VARCHAR(100) NOT NULL AFTER `status`, ADD `bankbranchname` VARCHAR(100) NOT NULL AFTER `bankname`, ADD `acno` VARCHAR(50) NOT NULL AFTER `bankbranchname`, ADD `zfsccode` VARCHAR(30) NOT NULL AFTER `acno`;
+
+ALTER TABLE `distributor_master` ADD `disbankname` VARCHAR(50) NOT NULL AFTER `status`, ADD `disbankbranchname` VARCHAR(50) NOT NULL AFTER `disbankname`, ADD `disacno` VARCHAR(50) NOT NULL AFTER `disbankbranchname`, ADD `disifsccode` VARCHAR(50) NOT NULL AFTER `disacno`;
+
+
+for Add Narration -9-7-2019
+
+
+ALTER TABLE `customer_matserdata` ADD `narration` VARCHAR(255) NOT NULL AFTER `branchid`;
