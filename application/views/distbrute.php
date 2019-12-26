@@ -102,7 +102,8 @@ if(isset($title_name)){
 						<div class="form-group row">
 		                    <label class="col-sm-3 text-left control-label col-form-label">Password*</label>
 		                    <div class="col-sm-9">
-		                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+								<input type="password" class="form-control" id="password" placeholder="Password" required>
+								<label id="lblpassword"></label>
 		                    </div>
 	                    </div><br>
 						<div class="form-group row" id="forcodediv">
