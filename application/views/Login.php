@@ -198,7 +198,9 @@ $(document).ready(function(){
 	});  
 });  
 </script>
-
+<footer class="footer text-center" style="margin-top:-1%;">
+             <img src="<?php echo base_url(); ?>assets/images/iso-9001-2015.png" style="width:6%;"> <b>ISO 9001-2015 Certified Company ::</b>2019 © copyright <a href="http://www.zodiactechsoft.com/" target="blank">Zodiactech Software</a>. All rights Reserved.
+</footer>
 </body>
 
 </html>

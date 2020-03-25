@@ -42,11 +42,11 @@
 }
 .main_background{
 	background-image:url("../assets/images/background/header-bg.jpg");
-	<!-- background-repeat:no-repeat; -->
-	background-size:cover;
-	<!-- vertical-align: middle; -->
-	<!-- border-style: none; -->
-	<!-- overflow-x: hidden; -->
+	 /* background-repeat:no-repeat;   */
+	 background-size:cover;
+	 /* vertical-align: middle; 
+	 border-style: none; 
+	 overflow-x: hidden;  */
 }
 </style>
 
@@ -54,7 +54,7 @@
 
 <body class="main_background" style="background-image: url('<?php echo base_url(); ?>assets/images/background/header-bg.jpg');">
     <form method="post" action="./" id="form1">
-	<img src="<?php echo base_url(); ?>assets/images/zodiac.jpeg" style="width:13%;float:left;margin-top:1%;margin-left:1%;">
+	<img src="<?php echo base_url(); ?>assets/images/ans-logo.png" style="width:13%;float:left;margin-top:1%;margin-left:1%;">
 
    <section style="padding: 100px 0px 0px 0px;">
    <!-- <center> -->
@@ -103,9 +103,10 @@
 
             </div>
 		<!-- </center> -->
-        </section>
+		</section>
+	
     </form>
-
+	<img src="<?php echo base_url(); ?>assets/images/zodiac.jpeg" style="width:13%;float:right;margin-right:1%;margin-top:35%">
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
@@ -121,8 +122,12 @@
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->
-   
-
+   <!-- <div class="text-center" style="margin-top:90%;">
+   <img src="<?php echo base_url(); ?>assets/images/iso-9001-2015.png" style="width:6%;"> <b>ISO 9001-2015 Certified Company ::</b>2019 © copyright <a href="http://www.zodiactechsoft.com/" target="blank">Zodiactech Software</a>. All rights Reserved.
+   </div> -->
+	
 </body>
-
+<!-- <footer class="footer text-center" style="margin-top:-1%;">
+             <img src="<?php echo base_url(); ?>assets/images/iso-9001-2015.png" style="width:6%;"> <b>ISO 9001-2015 Certified Company ::</b>2019 © copyright <a href="http://www.zodiactechsoft.com/" target="blank">Zodiactech Software</a>. All rights Reserved.
+</footer> -->
 </html>
