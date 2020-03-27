@@ -146,7 +146,9 @@ class Customermodel extends CI_Model
         $branchname="";
         $branchid="";
         $distributorid="";
-        $distributorname="";
+		$distributorname="";
+		$customer_name="";
+		$category="";
         if($this->session->role=="admin"){
         $this->db->select('count(id) as totalbill,sum(grandamt) as totalbillamt,sum(totalpaidamt) as totalpaidamt,distributorid,branchid');    
         $this->db->from('bill_master');
@@ -211,7 +213,7 @@ class Customermodel extends CI_Model
 
          }
         }else{
-            $this->db->select('count(id) as totalbill,sum(grandamt) as totalbillamt,sum(totalpaidamt) as totalpaidamt,distributorid,branchid');    
+            $this->db->select('count(id) as totalbill,sum(grandamt) as totalbillamt,sum(totalpaidamt) as totalpaidamt,distributorid,branchid,customerid');    
             $this->db->from('bill_master');
             $this->db->where('distributorid',$this->session->c_id);
             $this->db->where('branchid',$this->session->branchid);
@@ -225,7 +227,39 @@ class Customermodel extends CI_Model
                     $totalbillamt=$res1['totalbillamt'];
                     $totalpaidamt=$res1['totalpaidamt'];
                     $distributorid=$res1['distributorid'];
-                    $branchid=$res1['branchid'];
+					$branchid=$res1['branchid'];
+					$customerid=$res1['customerid'];
+					if($customerid !=""){
+                        $this->db->select('customer_matserdata.customername,customer_matserdata.category');    
+						$this->db->from('customer_matserdata');
+				         $this->db->where('customer_matserdata.id',$customerid);
+                        $query4 = $this->db->get();
+                        if($query4->num_rows()>0){
+                           foreach($query4->result_array() as $branchdata){
+							$customer_name=$branchdata['customername'];
+							$cat_id=$branchdata['category'];
+							if($cat_id=="1"){
+								$category="Monthly";
+							}
+							if($cat_id=="2"){
+								$category="Quarterly";
+							}
+							if($cat_id=="3"){
+								$category="Half Yearly";
+							}
+							if($cat_id=="4"){
+								$category="Yearly";
+							}
+							if($cat_id=="5"){
+								$category="Other";
+							}
+                           }
+                            
+                        }else{
+							$customer_name="";
+							$category="";
+                        }
+                    }
                     if($branchid !=""){
                         $this->db->select('branch_mastre.name as branchname');    
                         $this->db->from('branch_mastre');
@@ -265,8 +299,8 @@ class Customermodel extends CI_Model
                         'remainamt'=>$totalremain,
                         'branchid'=>$branchid,
                         'distributorid'=>$distributorid,
-                        'branchname'=>$branchname,
-                        'distributorname'=>$distributorname,
+                        'branchname'=>$customer_name,  //customer name
+                        'distributorname'=>$category,  // category
                     );
        
                 } 
